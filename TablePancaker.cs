@@ -24,20 +24,11 @@ namespace project.Classes
 		/// TablePanckaer() Constructor creates a db connection basted on a default 
 		/// AD Credential in a web.config.
 		/// </summary>
-		public TablePancaker()
-		{
-			_connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-		}
+		public TablePancaker() { _connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString; }
 
-		public SqlComm(string connectionString)
-		{
-			_connectionString = connectionString;
-		}
+		public TablePancaker(string connectionString) { _connectionString = connectionString; }
 
-		public TablePancaker(string user, string passwd, string server, string database)
-		{
-			_connectionString = user + passwd + server + database;
-		}
+		public TablePancaker(string user, string passwd, string server, string database) { _connectionString = user + passwd + server + database; }
 
 		public List<Tuple<int, string, string>> StoredProcedure(StoredProcedureType storedProecureType, string storedProcedureName)
 		{
